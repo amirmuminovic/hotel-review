@@ -1,3 +1,4 @@
+import { hotelRatingUpdateEmmiter } from '../events';
 import { UserDataAccess, HotelDataAccess } from '../data';
 import logger from '../logger';
 
@@ -18,6 +19,7 @@ const favoriteHotelController = async (req, res, next) => {
       const userDataAccess = new UserDataAccess({ searchQuery, data });
       await userDataAccess.updateUser();
       logger.info(`Hotel with id ${hotelID} successfully favorited!`);
+      hotelRatingUpdateEmmiter.emit('update', hotelID, 'favorites');
       res.sendStatus(200);
     }
   } catch (error) {
@@ -40,6 +42,7 @@ const unfavoriteHotelController = async (req, res, next) => {
       const userDataAccess = new UserDataAccess({ searchQuery, data });
       await userDataAccess.updateUser();
       logger.info(`Hotel with id ${hotelID} successfully unfavorited!`);
+      hotelRatingUpdateEmmiter.emit('update', hotelID, 'unfavorites');
       res.sendStatus(200);
     }
   } catch (error) {

@@ -1,4 +1,5 @@
 import { ReviewDataAccess, UserDataAccess } from '../data';
+import { hotelRatingUpdateEmmiter } from '../events';
 
 const getHotelReviewsController = async (req, res, next) => {
   const { hotelID } = req.params;
@@ -44,8 +45,10 @@ const toggleReactionController = async (req, res, next) => {
           ...review[reaction],
           id,
         ];
+        hotelRatingUpdateEmmiter.emit('update', review.hotelID, reaction);
       } else {
         review[reaction] = review[reaction].filter((userID) => String(userID) !== String(id));
+        hotelRatingUpdateEmmiter.emit('update', review.hotelID, reaction, -1);
       }
       reviewDataAccess.setData({ [reaction]: review[reaction] });
       await reviewDataAccess.updateReview();

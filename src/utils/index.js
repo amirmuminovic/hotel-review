@@ -9,7 +9,15 @@ const userTypes = {
   regular: 'Regular',
 };
 
+const ratingTable = {
+  likes: 0.1,
+  dislikes: -0.1,
+  favorites: 0.25,
+  unfavorites: -0.25,
+};
+
 export {
   userTypes,
   modelNames,
+  ratingTable,
 };

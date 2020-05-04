@@ -8,6 +8,10 @@ class HotelDataAccess {
     this.additionalOptions = additionalOptions;
   }
 
+  setData(data) {
+    this.data = data;
+  }
+
   async createHotel() {
     return HotelModel.create(this.data);
   }
