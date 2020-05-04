@@ -1,0 +1,406 @@
+openapi: 3.0.1
+info:
+  title: Hotel Review App
+  description: Pretty cool project :)
+  version: "0.1"
+servers:
+- url: http://localhost:3000
+paths:
+  /hotels:
+    get:
+      description: Get all hotels, alphabetically sorted. Name and address can be
+        added as query parameters for searching
+      operationId: hotelsGET
+      parameters:
+      - name: name
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: Bilton
+      - name: address
+        in: query
+        required: false
+        style: form
+        explode: true
+        schema:
+          type: string
+        example: Portomaso
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: application/json; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /login:
+    post:
+      description: Login page
+      operationId: loginPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body'
+            examples:
+              "0":
+                value: |-
+                  {
+                      "email": "amir.muminovic192@gmail.com",
+                      "password": "test123"
+                  }
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/html; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/html; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /hotel:
+    post:
+      description: Create a new hotel
+      operationId: hotelPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_1'
+            examples:
+              "0":
+                value: |-
+                  {
+                      "name": "Pilton Malta",
+                      "address": "Portomaso, STJ 4012 St. Julian¼s, Malta",
+                      "description": "Set on the seafront in Saint Julian's, the Pilton Malta is a luxury 5-star hotel offering panoramic views of the Mediterranean Sea and a modern décor.",
+                      "lat": 35.922457,
+                      "long": 14.493488,
+                      "photo": "https://r-cf.bstatic.com/images/hotel/max1024x768/267/26749091.jpg"
+                  }
+      responses:
+        "201":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/plain; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /logout:
+    delete:
+      description: Deletes used jwt
+      operationId: logoutDELETE
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/plain; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /hotel/"hotelID":
+    patch:
+      description: Updates a field of the hotel object
+      operationId: hotelhotelIDPATCH
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_2'
+            examples:
+              "0":
+                value: |-
+                  {
+                      "long": 14.493489
+                  }
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/plain; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /review/:reviewID:
+    get:
+      description: Gets a review by ID
+      operationId: reviewreviewIDGET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: application/json; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /hotel/:hotelID/favorite:
+    post:
+      description: Favorite a hotel
+      operationId: hotelhotelIDFavoritePOST
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/plain; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /review:
+    post:
+      description: Create a new review
+      operationId: reviewPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_3'
+            examples:
+              "0":
+                value: "{\r\n\t\"author\": \"amir1\",\r\n\t\"rating\": 5,\r\n\t\"\
+                  description\": \"Best hotel you'll find on Malta\",\r\n\t\"hotelID\"\
+                  : \"5e95d37ced6f16010b616dee\"\r\n}"
+      responses:
+        "201":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/plain; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /hotel/:hotelID:
+    get:
+      description: Get hotel by ID
+      operationId: hotelhotelIDGET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: application/json; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /review/:reviewID/toggle-reaction:
+    post:
+      description: Toggle a like/dislike of a review
+      operationId: reviewreviewIDToggle_reactionPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_4'
+            examples:
+              "0":
+                value: |-
+                  {
+                      "reaction": "dislikes"
+                  }
+              "1":
+                value: |-
+                  {
+                      "reaction": "likes"
+                  }
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/plain; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /hotel/:hotelID/unfavorite:
+    post:
+      description: Remove hotel from favorites
+      operationId: hotelhotelIDUnfavoritePOST
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            text/plain; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: text/plain; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /favorites:
+    get:
+      description: Get all favorites for logged in user
+      operationId: favoritesGET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: application/json; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /review-per-hotel/:hotelID:
+    get:
+      description: Get all reviews for a hotel
+      operationId: review_per_hotelhotelIDGET
+      responses:
+        "200":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: application/json; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+  /register:
+    post:
+      description: Create an account on the platform
+      operationId: registerPOST
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/body_5'
+            examples:
+              "0":
+                value: "{\n\t\"name\": \"amir4\",\n    \"email\": \"amir.muminovic192+4@gmail.com\"\
+                  ,\n    \"password\": \"test123\"\n}"
+      responses:
+        "201":
+          description: Auto generated using Swagger Inspector
+          content:
+            application/json; charset=utf-8:
+              schema:
+                type: string
+                x-content-type: application/json; charset=utf-8
+              examples: {}
+      servers:
+      - url: http://localhost:3000
+      x-swagger-router-controller: Default
+    servers:
+    - url: http://localhost:3000
+components:
+  schemas:
+    body:
+      type: object
+      properties:
+        password:
+          type: string
+        email:
+          type: string
+    body_1:
+      type: object
+      properties:
+        address:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+        photo:
+          type: string
+        lat:
+          type: number
+        long:
+          type: number
+    body_2:
+      type: object
+      properties:
+        long:
+          type: number
+    body_3:
+      type: object
+      properties:
+        author:
+          type: string
+        rating:
+          type: integer
+        description:
+          type: string
+        hotelID:
+          type: string
+    body_4:
+      type: object
+      properties:
+        reaction:
+          type: string
+    body_5:
+      type: object
+      properties:
+        password:
+          type: string
+        name:
+          type: string
+        email:
+          type: string

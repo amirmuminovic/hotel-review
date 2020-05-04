@@ -8,7 +8,8 @@
     "test": "npm run build && cross-env NODE_ENV=testing mocha dist/tests/*.test.js",
     "build": "rimraf dist && babel src --out-dir dist",
     "start": "npm run build && node dist",
-    "dev": "nodemon -w src --exec \"npm run build && node dist\""
+    "dev": "nodemon -w src --exec \"npm run build && node dist\"",
+    "swagger": "cd swagger && npm install && npm start"
   },
   "keywords": [],
   "author": "",
@@ -24,6 +25,7 @@
     "mongoose": "^5.9.11",
     "nodemailer": "^6.4.6",
     "nodemailer-sendgrid-transport": "^0.2.0",
+    "supertest": "^4.0.2",
     "winston": "^3.2.1"
   },
   "devDependencies": {

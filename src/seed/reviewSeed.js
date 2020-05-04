@@ -5,6 +5,7 @@ import logger from '../logger';
 
 const sampleReviews = [
   {
+    _id: new Types.ObjectId('5eb02dd68a4c3800117e8bef'),
     author: 'amir1',
     rating: 5,
     description: 'Best hotel you\'ll find on Malta',
