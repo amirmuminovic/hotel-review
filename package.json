@@ -12,7 +12,7 @@
     "swagger": "cd swagger && npm install && npm start"
   },
   "keywords": [],
-  "author": "",
+  "author": "Amir Muminovic",
   "license": "ISC",
   "dependencies": {
     "@hapi/joi": "^17.1.1",
