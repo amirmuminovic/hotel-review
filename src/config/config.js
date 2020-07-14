@@ -2,7 +2,7 @@ export default {
   development: {
     port: 3000,
     dbUrl: 'mongodb://mongo:27017/hotelReview',
-    sendgridAPIKey: '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',
-    jwtSecret: 'fhdsfsdh[vh[ohv[sje43423',
+    sendgridAPIKey: 'THIS_WILL_BE_ADDED_IN_THE_CODE_BUILD_PIPELINE_AS_A_PARAM',
+    jwtSecret: 'THIS_WILL_BE_ADDED_IN_THE_CODE_BUILD_PIPELINE_AS_A_PARAM',
   },
 };
