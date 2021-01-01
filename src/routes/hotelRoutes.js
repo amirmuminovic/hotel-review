@@ -8,13 +8,19 @@ const {
   getHotelsController,
   createHotelController,
   updateHotelController,
+  deleteHotelController,
 } = hotelControllers;
 
 const router = Router();
 
-router.get('/hotels', getHotelsController);
-router.get('/hotel/:hotelID', getHotelController);
-router.post('/hotel', isAuthenticated, isAdmin, createHotelController);
-router.patch('/hotel/:hotelID', isAuthenticated, isAdmin, updateHotelController);
+router.post('/hotels/search', getHotelsController);
+
+router.get('/hotels/:hotelID', getHotelController);
+
+router.delete('/hotels/:hotelID', isAuthenticated, isAdmin, deleteHotelController);
+
+router.post('/hotels', isAuthenticated, isAdmin, createHotelController);
+
+router.patch('/hotels/:hotelID', isAuthenticated, isAdmin, updateHotelController);
 
 export default router;

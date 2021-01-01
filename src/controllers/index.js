@@ -1,4 +1,4 @@
-import hotelControllers from './hotels';
+import hotelControllers from './hotelsController';
 import favoritesControllers from './favorites';
 import reviewControllers from './review';
 import authenticationControllers from './authentication';

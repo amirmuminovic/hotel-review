@@ -1,7 +1,7 @@
 import { connect } from 'mongoose';
 import config from '../config';
 
-const mongoConnection = async () => {
+const connectToMongoDB = async () => {
   const connection = await connect(config.dbUrl, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -9,4 +9,4 @@ const mongoConnection = async () => {
   return connection.connection.db;
 };
 
-export default mongoConnection;
+export default connectToMongoDB;

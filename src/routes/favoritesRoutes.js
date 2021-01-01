@@ -12,7 +12,9 @@ const {
 const router = Router();
 
 router.post('/hotel/:hotelID/favorite', isAuthenticated, favoriteHotelController);
+
 router.post('/hotel/:hotelID/unfavorite', isAuthenticated, unfavoriteHotelController);
+
 router.get('/favorites', isAuthenticated, viewfavoriteHotelsController);
 
 export default router;

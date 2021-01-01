@@ -14,18 +14,6 @@ services:
     ports:
       - 8081:8081
 
-  swagger:
-    restart: always
-    command: ['npm', 'start']
-    ports: 
-      - "8080:8080"
-    build:
-      context: ./swagger
-      dockerfile: ./Dockerfile
-    volumes:
-      - /swagger/node_modules
-      - ./swagger/:/swagger
-
   hotel-review:
     links:
       - mongo

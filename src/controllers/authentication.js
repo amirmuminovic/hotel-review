@@ -10,7 +10,7 @@ const registerController = async (req, res, next) => {
     logger.info('Creating new user...');
     const userDataAccess = new UserDataAccess({ data: userData });
     const user = await userDataAccess.createUser();
-    logger.info('Successfully created user.');
+    logger.info(`Successfully created user ${user.id}.`);
 
     logger.info('Sending registration link...');
     const userService = new UserService(user, { mailTransport: true });

@@ -15,10 +15,10 @@ const sampleHotels = [
   {
     _id: new Types.ObjectId('5e95d37ced6f16010b616def'),
     name: 'Bilton Malta',
-    address: 'Portomaso, STJ 4012 St. Julianʼs, Malta',
-    description: 'Set on the seafront in Saint Julian\'s, the Hilton Malta is a luxury 5-star hotel offering panoramic views of the Mediterranean Sea and a modern décor.',
-    lat: 35.922457,
-    long: 14.493488,
+    address: 'Bortomaso, STJ 4012 St. Julianʼs, Malta',
+    description: 'Cool hotel!',
+    lat: 25.922457,
+    long: 24.493488,
   },
 ];
 

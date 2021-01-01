@@ -7,7 +7,6 @@ import {
   authRoutes, hotelRoutes, favoritesRoutes, reviewRoutes,
 } from '../routes';
 
-
 const appInitializer = async ({ app }) => {
   app.use(cors());
   app.use(json());
