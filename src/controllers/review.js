@@ -1,5 +1,6 @@
 import { HotelDataAccess, ReviewDataAccess, UserDataAccess } from '../data';
 import { ratingTable } from '../utils';
+import ReviewSchema from '../validations/ReviewSchema';
 
 const getHotelReviewsController = async (req, res, next) => {
   const { hotelID } = req.params;
@@ -18,6 +19,7 @@ const createReviewController = async (req, res, next) => {
   const review = req.body;
 
   try {
+    await ReviewSchema.validateAsync(review);
     const reviewDataAccess = new ReviewDataAccess({ data: review });
     await reviewDataAccess.createReview();
 
@@ -46,9 +48,6 @@ const likeReactionController = async (req, res, next) => {
           id,
         ];
         const hotel = await HotelDataAccess.fetchHotel({ _id: review.hotelID });
-        console.log('++++++++++++++++++++');
-        console.log(ratingTable.likes);
-        console.log('++++++++++++++++++++');
         hotel.rating += ratingTable.likes;
         await hotel.save();
       }

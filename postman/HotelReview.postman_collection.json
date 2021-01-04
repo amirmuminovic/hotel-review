@@ -15,7 +15,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU4OCwiZXhwIjoxNjA5NzgzMTg4fQ.vJdoLHwGwadqjGl-TB4HTvRFwFX6O3z5tgw-77d7zIc",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE2MiwiZXhwIjoxNjA5Nzg5NzYyfQ.uT3R3rNvknLZvbmo7_LNM16_OKJkcCVdj2JvtbItGQ0",
 								"type": "text"
 							}
 						],
@@ -29,8 +29,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/hotels",
-							"protocol": "http",
+							"raw": "https://localhost:3000/hotels",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -49,15 +49,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/hotels/5ff0a9f91b603e0012a7ea23",
-							"protocol": "http",
+							"raw": "https://localhost:3000/hotels/5e95d37ced6f16010b616dee",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"hotels",
-								"5ff0a9f91b603e0012a7ea23"
+								"5e95d37ced6f16010b616dee"
 							]
 						},
 						"description": "Get one hotel"
@@ -72,7 +72,7 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU4OCwiZXhwIjoxNjA5NzgzMTg4fQ.vJdoLHwGwadqjGl-TB4HTvRFwFX6O3z5tgw-77d7zIc"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE2MiwiZXhwIjoxNjA5Nzg5NzYyfQ.uT3R3rNvknLZvbmo7_LNM16_OKJkcCVdj2JvtbItGQ0"
 							}
 						],
 						"body": {
@@ -85,15 +85,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/hotels/5ff0a9f91b603e0012a7ea23",
-							"protocol": "http",
+							"raw": "https://localhost:3000/hotels/5e95d37ced6f16010b616dee",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"hotels",
-								"5ff0a9f91b603e0012a7ea23"
+								"5e95d37ced6f16010b616dee"
 							]
 						},
 						"description": "Update existing hotel"
@@ -107,20 +107,20 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU4OCwiZXhwIjoxNjA5NzgzMTg4fQ.vJdoLHwGwadqjGl-TB4HTvRFwFX6O3z5tgw-77d7zIc",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE2MiwiZXhwIjoxNjA5Nzg5NzYyfQ.uT3R3rNvknLZvbmo7_LNM16_OKJkcCVdj2JvtbItGQ0",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/hotels/5ff0a9f91b603e0012a7ea23",
-							"protocol": "http",
+							"raw": "https://localhost:3000/hotels/5e95d37ced6f16010b616def",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"hotels",
-								"5ff0a9f91b603e0012a7ea23"
+								"5e95d37ced6f16010b616def"
 							]
 						}
 					},
@@ -141,8 +141,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/hotels/search",
-							"protocol": "http",
+							"raw": "https://localhost:3000/hotels/search",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -188,8 +188,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/login",
-							"protocol": "http",
+							"raw": "https://localhost:3000/login",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -209,7 +209,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\": \"amir111\",\n    \"email\": \"amir.muminovic192+1214@gmail.com\",\n    \"password\": \"test123\"\n}",
+							"raw": "{\n\t\"name\": \"amir1111\",\n    \"email\": \"amir.muminovic192+12114@gmail.com\",\n    \"password\": \"test123\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -217,8 +217,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/register",
-							"protocol": "http",
+							"raw": "https://localhost:3000/register",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -238,13 +238,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU1MSwiZXhwIjoxNjA5NzgzMTUxfQ.lVenOjIefnwkaM1h8vZlhDHrzyAUnVNGpJDyj0ueCvQ",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE0NCwiZXhwIjoxNjA5Nzg5NzQ0fQ.Ap_gdb6BZgk8inG59dm8-IUDaCNGTgkpBmyClLhPUlI",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/logout",
-							"protocol": "http",
+							"raw": "https://localhost:3000/logout",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -269,13 +269,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE2MiwiZXhwIjoxNjA5Nzg5NzYyfQ.uT3R3rNvknLZvbmo7_LNM16_OKJkcCVdj2JvtbItGQ0",
 								"type": "text"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616def/favorite",
-							"protocol": "http",
+							"raw": "https://localhost:3000/hotel/5e95d37ced6f16010b616def/favorite",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -298,12 +298,12 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE2MiwiZXhwIjoxNjA5Nzg5NzYyfQ.uT3R3rNvknLZvbmo7_LNM16_OKJkcCVdj2JvtbItGQ0"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616def/unfavorite",
-							"protocol": "http",
+							"raw": "https://localhost:3000/hotel/5e95d37ced6f16010b616def/unfavorite",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -355,8 +355,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/review-per-hotel/5e95d37ced6f16010b616dee",
-							"protocol": "http",
+							"raw": "https://localhost:3000/review-per-hotel/5e95d37ced6f16010b616dee",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -376,8 +376,8 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:3000/review/5eb02dd68a4c3800117e8bef",
-							"protocol": "http",
+							"raw": "https://localhost:3000/review/5eb02dd68a4c3800117e8bef",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -398,7 +398,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NTYwOCwiZXhwIjoxNjA5Nzg5MjA4fQ.DYmn7GkblGznUoTHmTo6sRefunDDoq299iL40LZbN_I",
 								"type": "text"
 							}
 						],
@@ -412,8 +412,8 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:3000/review",
-							"protocol": "http",
+							"raw": "https://localhost:3000/review",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
@@ -434,19 +434,19 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE2MiwiZXhwIjoxNjA5Nzg5NzYyfQ.uT3R3rNvknLZvbmo7_LNM16_OKJkcCVdj2JvtbItGQ0"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/review/5ff34d2c70ac7404d0e7a834/dislike",
-							"protocol": "http",
+							"raw": "https://localhost:3000/review/5ff365206f080435247ff28c/dislike",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"review",
-								"5ff34d2c70ac7404d0e7a834",
+								"5ff365206f080435247ff28c",
 								"dislike"
 							]
 						},
@@ -462,19 +462,19 @@
 							{
 								"key": "Authorization",
 								"type": "text",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY"
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4NjE2MiwiZXhwIjoxNjA5Nzg5NzYyfQ.uT3R3rNvknLZvbmo7_LNM16_OKJkcCVdj2JvtbItGQ0"
 							}
 						],
 						"url": {
-							"raw": "http://localhost:3000/review/5ff34d2c70ac7404d0e7a834/like",
-							"protocol": "http",
+							"raw": "https://localhost:3000/review/5ff365206f080435247ff28c/like",
+							"protocol": "https",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
 								"review",
-								"5ff34d2c70ac7404d0e7a834",
+								"5ff365206f080435247ff28c",
 								"like"
 							]
 						},

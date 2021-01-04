@@ -3,10 +3,12 @@ import { UserDataAccess } from '../data';
 import { UserService } from '../services';
 import logger from '../logger';
 import config from '../config';
+import UserSchema from '../validations/UserSchema';
 
 const registerController = async (req, res, next) => {
   const userData = req.body;
   try {
+    await UserSchema.validateAsync(req.body);
     logger.info('Creating new user...');
     const userDataAccess = new UserDataAccess({ data: userData });
     const user = await userDataAccess.createUser();
@@ -59,6 +61,7 @@ const loginController = async (req, res, next) => {
   const searchQuery = { email, valid: true };
 
   try {
+    await UserSchema.validateAsync(req.body);
     const userDataAccess = new UserDataAccess({ searchQuery });
     const user = await userDataAccess.fetchUser();
 
