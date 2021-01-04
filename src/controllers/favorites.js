@@ -1,5 +1,5 @@
-import { hotelRatingUpdateEmmiter } from '../events';
 import { UserDataAccess, HotelDataAccess } from '../data';
+import { ratingTable } from '../utils';
 import logger from '../logger';
 
 const favoriteHotelController = async (req, res, next) => {
@@ -19,7 +19,10 @@ const favoriteHotelController = async (req, res, next) => {
       const userDataAccess = new UserDataAccess({ searchQuery, data });
       await userDataAccess.updateUser();
       logger.info(`Hotel with id ${hotelID} successfully favorited!`);
-      hotelRatingUpdateEmmiter.emit('update', hotelID, 'favorites');
+      const hotel = await HotelDataAccess.fetchHotel({ _id: hotelID });
+      hotel.rating += ratingTable.favorites;
+      await hotel.save();
+
       res.sendStatus(200);
     }
   } catch (error) {
@@ -42,7 +45,9 @@ const unfavoriteHotelController = async (req, res, next) => {
       const userDataAccess = new UserDataAccess({ searchQuery, data });
       await userDataAccess.updateUser();
       logger.info(`Hotel with id ${hotelID} successfully unfavorited!`);
-      hotelRatingUpdateEmmiter.emit('update', hotelID, 'unfavorites');
+      const hotel = await HotelDataAccess.fetchHotel({ _id: hotelID });
+      hotel.rating += ratingTable.unfavorites;
+      await hotel.save();
       res.sendStatus(200);
     }
   } catch (error) {
@@ -55,15 +60,13 @@ const viewfavoriteHotelsController = async (req, res, next) => {
   const searchQuery = { _id: { $in: user.favorites } };
 
   try {
-    const hotelDataAccess = new HotelDataAccess({ searchQuery });
-    const favoriteHotels = await hotelDataAccess.fetchHotels();
+    const favoriteHotels = await HotelDataAccess.fetchHotels(searchQuery);
 
     res.send(favoriteHotels);
   } catch (error) {
     next(error);
   }
 };
-
 
 export default {
   favoriteHotelController,

@@ -1,6 +1,5 @@
 import { ReviewModel } from '../models';
 
-
 class ReviewDataAccess {
   constructor({ data, searchQuery, additionalOptions }) {
     this.data = data;

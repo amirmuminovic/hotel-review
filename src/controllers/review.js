@@ -1,5 +1,5 @@
-import { ReviewDataAccess, UserDataAccess } from '../data';
-import { hotelRatingUpdateEmmiter } from '../events';
+import { HotelDataAccess, ReviewDataAccess, UserDataAccess } from '../data';
+import { ratingTable } from '../utils';
 
 const getHotelReviewsController = async (req, res, next) => {
   const { hotelID } = req.params;
@@ -27,8 +27,7 @@ const createReviewController = async (req, res, next) => {
   }
 };
 
-const toggleReactionController = async (req, res, next) => {
-  const { reaction } = req.body;
+const likeReactionController = async (req, res, next) => {
   const { _id: id } = req.user;
   const { reviewID } = req.params;
   const searchQuery = { _id: reviewID };
@@ -39,19 +38,64 @@ const toggleReactionController = async (req, res, next) => {
     if (!review) {
       res.sendStatus(404);
     } else {
-      const currentReaction = review[reaction].map((userID) => String(userID)).includes(id);
+      const currentReaction = review.likes.map((userID) => String(userID)).includes(id);
+      const currentOppositeReaction = review.dislikes.map((userID) => String(userID)).includes(id);
       if (!currentReaction) {
-        review[reaction] = [
-          ...review[reaction],
+        review.likes = [
+          ...review.likes,
           id,
         ];
-        hotelRatingUpdateEmmiter.emit('update', review.hotelID, reaction);
-      } else {
-        review[reaction] = review[reaction].filter((userID) => String(userID) !== String(id));
-        hotelRatingUpdateEmmiter.emit('update', review.hotelID, reaction, -1);
+        const hotel = await HotelDataAccess.fetchHotel({ _id: review.hotelID });
+        console.log('++++++++++++++++++++');
+        console.log(ratingTable.likes);
+        console.log('++++++++++++++++++++');
+        hotel.rating += ratingTable.likes;
+        await hotel.save();
       }
-      reviewDataAccess.setData({ [reaction]: review[reaction] });
-      await reviewDataAccess.updateReview();
+      if (currentOppositeReaction) {
+        review.dislikes = review.dislikes.filter((userID) => String(userID) !== String(id));
+        const hotel = await HotelDataAccess.fetchHotel({ _id: review.hotelID });
+        hotel.rating -= ratingTable.dislikes;
+        await hotel.save();
+      }
+
+      await review.save();
+      res.sendStatus(200);
+    }
+  } catch (error) {
+    next(error);
+  }
+};
+
+const dislikeReactionController = async (req, res, next) => {
+  const { _id: id } = req.user;
+  const { reviewID } = req.params;
+  const searchQuery = { _id: reviewID };
+
+  try {
+    const reviewDataAccess = new ReviewDataAccess({ searchQuery });
+    const review = await reviewDataAccess.fetchReview();
+    if (!review) {
+      res.sendStatus(404);
+    } else {
+      const currentReaction = review.dislikes.map((userID) => String(userID)).includes(id);
+      if (!currentReaction) {
+        review.dislikes = [
+          ...review.dislikes,
+          id,
+        ];
+        const hotel = await HotelDataAccess.fetchHotel({ _id: review.hotelID });
+        hotel.rating += ratingTable.dislikes;
+        await hotel.save();
+      }
+      const currentOppositeReaction = review.likes.map((userID) => String(userID)).includes(id);
+      if (currentOppositeReaction) {
+        review.likes = review.likes.filter((userID) => String(userID) !== String(id));
+        const hotel = await HotelDataAccess.fetchHotel({ _id: review.hotelID });
+        hotel.rating -= ratingTable.likes;
+        await hotel.save();
+      }
+      await review.save();
       res.sendStatus(200);
     }
   } catch (error) {
@@ -86,7 +130,8 @@ const getReviewController = async (req, res, next) => {
 
 export default {
   getReviewController,
-  toggleReactionController,
+  likeReactionController,
+  dislikeReactionController,
   createReviewController,
   getHotelReviewsController,
 };

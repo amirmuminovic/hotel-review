@@ -7,7 +7,7 @@ const HotelSchema = Joi.object({
     .trim(),
   address: Joi.string()
     .min(2)
-    .max(30)
+    .max(100)
     .trim(),
   photo: Joi.string()
     .base64(),

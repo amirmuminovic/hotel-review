@@ -25,7 +25,7 @@ const isAuthenticated = async (req, res, next) => {
     }
   } catch (error) {
     logger.error(error);
-    next(error);
+    res.sendStatus(401);
   }
 };
 

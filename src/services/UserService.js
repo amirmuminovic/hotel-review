@@ -23,7 +23,7 @@ class UserService {
   async registerUser() {
     this.transporter.sendMail({
       to: this.user.email,
-      from: 'amir.muminovic192+1@gmail.com',
+      from: 'amuminovic3@etf.unsa.ba',
       subject: 'Welcome to HotelReview!',
       html: `
         <p>Dear ${this.user.name}, welcome to HotelReview!</p>

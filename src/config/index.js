@@ -1,4 +1,8 @@
+import dotenv from 'dotenv';
+
 import config from './config';
+
+dotenv.config();
 
 const env = process.env.NODE_ENV || 'development';
 

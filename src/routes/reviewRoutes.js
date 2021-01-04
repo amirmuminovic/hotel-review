@@ -6,7 +6,8 @@ import { isAuthenticated } from '../middleware';
 const {
   getHotelReviewsController,
   createReviewController,
-  toggleReactionController,
+  likeReactionController,
+  dislikeReactionController,
   getReviewController,
 } = reviewControllers;
 
@@ -16,7 +17,8 @@ router.post('/review', isAuthenticated, createReviewController);
 
 router.get('/review-per-hotel/:hotelID', getHotelReviewsController);
 
-router.post('/review/:reviewID/toggle-reaction', isAuthenticated, toggleReactionController);
+router.post('/review/:reviewID/like', isAuthenticated, likeReactionController);
+router.post('/review/:reviewID/dislike', isAuthenticated, dislikeReactionController);
 
 router.get('/review/:reviewID', getReviewController);
 
