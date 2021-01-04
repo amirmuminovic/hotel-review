@@ -1,469 +1,488 @@
 {
 	"info": {
-		"_postman_id": "027ebd2f-8853-4ce2-a330-8268b056667a",
+		"_postman_id": "cf68c04f-fb51-4c76-8d0e-8d35b303236d",
 		"name": "HotelReview",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Registration first step",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"name\": \"amir4\",\n    \"email\": \"amir.muminovic192+4@gmail.com\",\n    \"password\": \"test123\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"register"
-					]
-				},
-				"description": "Registration first step"
-			},
-			"response": []
-		},
-		{
-			"name": "Login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"email\": \"amir.muminovic192@gmail.com\",\n    \"password\": \"test123\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"login"
-					]
-				},
-				"description": "Successful login for previously created user"
-			},
-			"response": []
-		},
-		{
-			"name": "Loging out",
-			"request": {
-				"method": "DELETE",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDQ2MiwiZXhwIjoxNTg4NjA4MDYyfQ.5YfTkB7t9XNUXvN5g_Fuxi7PiRumRRtOZfQ7p1o7qs8",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:3000/logout",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"logout"
-					]
-				},
-				"description": "Loging out"
-			},
-			"response": []
-		},
-		{
-			"name": "Get all hotels, sorted alphabetically",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/hotels",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hotels"
-					]
-				},
-				"description": "Get all hotels, sorted alphabetically"
-			},
-			"response": []
-		},
-		{
-			"name": "Get one hotel",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616dee",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hotel",
-						"5e95d37ced6f16010b616dee"
-					]
-				},
-				"description": "Get one hotel"
-			},
-			"response": []
-		},
-		{
-			"name": "Create new hotel",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDUwNSwiZXhwIjoxNTg4NjA4MTA1fQ.DeHU8pDvHtqZlw99kJrXiRIt3zezVowvPrQBASvaEnw",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Pilton Malta\",\n    \"address\": \"Portomaso, STJ 4012 St. Julianʼs, Malta\",\n    \"description\": \"Set on the seafront in Saint Julian's, the Pilton Malta is a luxury 5-star hotel offering panoramic views of the Mediterranean Sea and a modern décor.\",\n    \"lat\": 35.922457,\n    \"long\": 14.493488\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/hotel",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hotel"
-					]
-				},
-				"description": "Create new hotel"
-			},
-			"response": []
-		},
-		{
-			"name": "Update existing hotel",
-			"request": {
-				"method": "PATCH",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDUwNSwiZXhwIjoxNTg4NjA4MTA1fQ.DeHU8pDvHtqZlw99kJrXiRIt3zezVowvPrQBASvaEnw"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Zilton Malta\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616dee",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hotel",
-						"5e95d37ced6f16010b616dee"
-					]
-				},
-				"description": "Update existing hotel"
-			},
-			"response": []
-		},
-		{
-			"name": "search with name and/or address",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/hotels?address=Portomaso&name=Zilton",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hotels"
-					],
-					"query": [
-						{
-							"key": "address",
-							"value": "Portomaso"
+			"name": "HotelAPI",
+			"item": [
+				{
+					"name": "Create new hotel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU4OCwiZXhwIjoxNjA5NzgzMTg4fQ.vJdoLHwGwadqjGl-TB4HTvRFwFX6O3z5tgw-77d7zIc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Pilton Malta\",\n    \"address\": \"Portomasos\",\n    \"description\": \"Set on the seafront in Saint Julian's, the Pilton Malta is a luxury 5-star hotel offering panoramic views of the Mediterranean Sea and a modern décor.\",\n    \"lat\": 35.922457,\n    \"long\": 14.493488\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "name",
-							"value": "Zilton"
+						"url": {
+							"raw": "http://localhost:3000/hotels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotels"
+							]
+						},
+						"description": "Create new hotel"
+					},
+					"response": []
+				},
+				{
+					"name": "Get one hotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/hotels/5ff0a9f91b603e0012a7ea23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotels",
+								"5ff0a9f91b603e0012a7ea23"
+							]
+						},
+						"description": "Get one hotel"
+					},
+					"response": []
+				},
+				{
+					"name": "Update existing hotel",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU4OCwiZXhwIjoxNjA5NzgzMTg4fQ.vJdoLHwGwadqjGl-TB4HTvRFwFX6O3z5tgw-77d7zIc"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Zilton Malta\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/hotels/5ff0a9f91b603e0012a7ea23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotels",
+								"5ff0a9f91b603e0012a7ea23"
+							]
+						},
+						"description": "Update existing hotel"
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteHotel",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU4OCwiZXhwIjoxNjA5NzgzMTg4fQ.vJdoLHwGwadqjGl-TB4HTvRFwFX6O3z5tgw-77d7zIc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/hotels/5ff0a9f91b603e0012a7ea23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotels",
+								"5ff0a9f91b603e0012a7ea23"
+							]
 						}
-					]
+					},
+					"response": []
 				},
-				"description": "search with name and/or address"
-			},
-			"response": []
+				{
+					"name": "Search/Sorting/Pagination",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": [\r\n        {\r\n            \"type\": \"in\",\r\n            \"feature\": \"name\",\r\n            \"value\": \"Malta\"\r\n        },\r\n        {\r\n            \"type\": \"gt\",\r\n            \"feature\": \"lat\",\r\n            \"value\": 35\r\n        },\r\n        {\r\n            \"type\": \"lt\",\r\n            \"feature\": \"long\",\r\n            \"value\": 15\r\n        }\r\n    ],\r\n    \"sort\": [\r\n        {\r\n            \"type\": \"asc\",\r\n            \"feature\": \"name\",\r\n            \"priority\": 1\r\n        },\r\n        {\r\n            \"type\": \"desc\",\r\n            \"feature\": \"lat\",\r\n            \"priority\": 2\r\n        }\r\n    ],\r\n    \"paging\": {\r\n        \"page\": 0,\r\n        \"pageSize\": 2\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/hotels/search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotels",
+								"search"
+							],
+							"query": [
+								{
+									"key": "address",
+									"value": "Portomaso",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Zilton",
+									"disabled": true
+								}
+							]
+						},
+						"description": "search with name and/or address"
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "Favorite a hotel",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDUwNSwiZXhwIjoxNTg4NjA4MTA1fQ.DeHU8pDvHtqZlw99kJrXiRIt3zezVowvPrQBASvaEnw",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616dee/favorite",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hotel",
-						"5e95d37ced6f16010b616dee",
-						"favorite"
-					]
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\": \"amir.muminovic192@gmail.com\",\n    \"password\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"login"
+							]
+						},
+						"description": "Successful login for previously created user"
+					},
+					"response": []
 				},
-				"description": "Favorite an existing hotel"
-			},
-			"response": []
+				{
+					"name": "Registration first step",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"amir111\",\n    \"email\": \"amir.muminovic192+1214@gmail.com\",\n    \"password\": \"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"register"
+							]
+						},
+						"description": "Registration first step"
+					},
+					"response": []
+				},
+				{
+					"name": "Loging out",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjBhNzk3Nzk3NTcxMDAxM2EzNGNiZiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc3OTU1MSwiZXhwIjoxNjA5NzgzMTUxfQ.lVenOjIefnwkaM1h8vZlhDHrzyAUnVNGpJDyj0ueCvQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"logout"
+							]
+						},
+						"description": "Loging out"
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "Unfavorite a hotel",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDUwNSwiZXhwIjoxNTg4NjA4MTA1fQ.DeHU8pDvHtqZlw99kJrXiRIt3zezVowvPrQBASvaEnw"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616dee/unfavorite",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"hotel",
-						"5e95d37ced6f16010b616dee",
-						"unfavorite"
-					]
+			"name": "Favorite",
+			"item": [
+				{
+					"name": "Favorite a hotel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616def/favorite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel",
+								"5e95d37ced6f16010b616def",
+								"favorite"
+							]
+						},
+						"description": "Favorite an existing hotel"
+					},
+					"response": []
 				},
-				"description": "Favorite an existing hotel"
-			},
-			"response": []
+				{
+					"name": "Unfavorite a hotel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/hotel/5e95d37ced6f16010b616def/unfavorite",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"hotel",
+								"5e95d37ced6f16010b616def",
+								"unfavorite"
+							]
+						},
+						"description": "Favorite an existing hotel"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all favorites for user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/favorites",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"favorites"
+							]
+						},
+						"description": "Get all favorites for user"
+					},
+					"response": []
+				}
+			]
 		},
 		{
-			"name": "Get all favorites for user",
-			"request": {
-				"method": "GET",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDcxMSwiZXhwIjoxNTg4NjA4MzExfQ.1qh6nyrL-hNZ0nMsM__ajQjjJQMABkKKr43Ri9h9Mzs",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "http://localhost:3000/favorites",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"favorites"
-					]
+			"name": "Review",
+			"item": [
+				{
+					"name": "Check reviews for a specific hotel",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/review-per-hotel/5e95d37ced6f16010b616dee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review-per-hotel",
+								"5e95d37ced6f16010b616dee"
+							]
+						},
+						"description": "Check reviews for a specific hotel"
+					},
+					"response": []
 				},
-				"description": "Get all favorites for user"
-			},
-			"response": []
-		},
-		{
-			"name": "Create new review",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDcxMSwiZXhwIjoxNTg4NjA4MzExfQ.1qh6nyrL-hNZ0nMsM__ajQjjJQMABkKKr43Ri9h9Mzs",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n\t\"author\": \"amir1\",\r\n\t\"rating\": 5,\r\n\t\"description\": \"Best hotel you'll find on Malta\",\r\n\t\"hotelID\": \"5e95d37ced6f16010b616dee\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+				{
+					"name": "Get one review",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/review/5eb02dd68a4c3800117e8bef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"5eb02dd68a4c3800117e8bef"
+							]
+						},
+						"description": "Get one review\n"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://localhost:3000/review",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review"
-					]
+				{
+					"name": "Create new review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"author\": \"amir1\",\r\n\t\"rating\": 5,\r\n\t\"description\": \"Best hotel you'll find on Malta\",\r\n\t\"hotelID\": \"5e95d37ced6f16010b616dee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/review",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review"
+							]
+						},
+						"description": "Create new review"
+					},
+					"response": []
 				},
-				"description": "Create new review"
-			},
-			"response": []
-		},
-		{
-			"name": "Get one review",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/review/5eb02dd68a4c3800117e8bef",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review",
-						"5eb02dd68a4c3800117e8bef"
-					]
+				{
+					"name": "Dislike review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/review/5ff34d2c70ac7404d0e7a834/dislike",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"5ff34d2c70ac7404d0e7a834",
+								"dislike"
+							]
+						},
+						"description": "Toggle Like"
+					},
+					"response": []
 				},
-				"description": "Get one review\n"
-			},
-			"response": []
-		},
-		{
-			"name": "Check reviews for a specific hotel",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/review-per-hotel/5e95d37ced6f16010b616dee",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review-per-hotel",
-						"5e95d37ced6f16010b616dee"
-					]
-				},
-				"description": "Check reviews for a specific hotel"
-			},
-			"response": []
-		},
-		{
-			"name": "Toggle like",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDcxMSwiZXhwIjoxNTg4NjA4MzExfQ.1qh6nyrL-hNZ0nMsM__ajQjjJQMABkKKr43Ri9h9Mzs",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"reaction\": \"likes\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/review/5eb02dd68a4c3800117e8bef/toggle-reaction",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review",
-						"5eb02dd68a4c3800117e8bef",
-						"toggle-reaction"
-					]
-				},
-				"description": "Toggle Like"
-			},
-			"response": []
-		},
-		{
-			"name": "Toggle dislike",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Authorization",
-						"type": "text",
-						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjAyZGQ2OGE0YzM4MDAxMTdlOGJlYiIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTU4ODYwNDcxMSwiZXhwIjoxNTg4NjA4MzExfQ.1qh6nyrL-hNZ0nMsM__ajQjjJQMABkKKr43Ri9h9Mzs"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n\t\"reaction\": \"dislikes\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:3000/review/5eb02dd68a4c3800117e8bef/toggle-reaction",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"review",
-						"5eb02dd68a4c3800117e8bef",
-						"toggle-reaction"
-					]
-				},
-				"description": "Toggle Like"
-			},
-			"response": []
+				{
+					"name": "Like review",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjM0YzVlODhhNWUyMTc3Yzg0ODA1MSIsInR5cGUiOiJBZG1pbiIsImlhdCI6MTYwOTc4MDMyNSwiZXhwIjoxNjA5NzgzOTI1fQ.sFIz2jfwxRQ0K4PaeISj2OyPQDWfaXKhZINPnQg_IdY"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/review/5ff34d2c70ac7404d0e7a834/like",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"review",
+								"5ff34d2c70ac7404d0e7a834",
+								"like"
+							]
+						},
+						"description": "Toggle Like"
+					},
+					"response": []
+				}
+			]
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
