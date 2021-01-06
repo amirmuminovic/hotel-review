@@ -12,7 +12,6 @@ const certificate = fs.readFileSync('./ssl/cert.pem', 'utf8');
 const credentials = {
   key: privateKey,
   cert: certificate,
-  passphrase: 'nodejs',
 };
 
 const startServer = async () => {
