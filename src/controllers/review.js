@@ -20,8 +20,15 @@ const createReviewController = async (req, res, next) => {
 
   try {
     await ReviewSchema.validateAsync(review);
-    const reviewDataAccess = new ReviewDataAccess({ data: review });
+    const reviewDataAccess = new ReviewDataAccess({
+      data: review,
+      searchQuery: { hotelID: review.hotelID },
+    });
     await reviewDataAccess.createReview();
+    const oldReviews = await reviewDataAccess.fetchReviews();
+    const hotel = await HotelDataAccess.fetchHotel({ _id: review.hotelID });
+    hotel.rating = (hotel.rating * oldReviews.length + review.rating) / (oldReviews.length + 1);
+    await hotel.save();
 
     res.sendStatus(201);
   } catch (error) {
