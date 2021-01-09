@@ -22,6 +22,7 @@ const registerController = async (req, res, next) => {
     res.status(201).send({
       message: 'User successfuly created',
     });
+    next();
   } catch (error) {
     next(error);
   }
@@ -50,6 +51,7 @@ const registrationConfirmationController = async (req, res, next) => {
         path: req.path,
       });
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -96,6 +98,7 @@ const loginController = async (req, res, next) => {
         message: 'Invalid login credentials',
       });
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -113,6 +116,7 @@ const logoutController = async (req, res, next) => {
 
       res.sendStatus(200);
     }
+    next();
   } catch (error) {
     next(error);
   }

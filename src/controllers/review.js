@@ -61,6 +61,7 @@ const likeReactionController = async (req, res, next) => {
       await review.save();
       res.sendStatus(200);
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -97,6 +98,7 @@ const dislikeReactionController = async (req, res, next) => {
       await review.save();
       res.sendStatus(200);
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -122,6 +124,7 @@ const getReviewController = async (req, res, next) => {
     } else {
       res.sendStatus(404);
     }
+    next();
   } catch (error) {
     next(error);
   }
