@@ -25,6 +25,7 @@ const favoriteHotelController = async (req, res, next) => {
 
       res.sendStatus(200);
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -50,6 +51,7 @@ const unfavoriteHotelController = async (req, res, next) => {
       await hotel.save();
       res.sendStatus(200);
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -63,6 +65,7 @@ const viewfavoriteHotelsController = async (req, res, next) => {
     const favoriteHotels = await HotelDataAccess.fetchHotels(searchQuery);
 
     res.send(favoriteHotels);
+    next();
   } catch (error) {
     next(error);
   }

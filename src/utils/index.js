@@ -2,6 +2,8 @@ const modelNames = {
   user: 'User',
   hotel: 'Hotel',
   review: 'Review',
+  audit: 'Audit',
+  error: 'Error',
 };
 
 const userTypes = {
@@ -84,7 +86,7 @@ const mapOperatorsToGroups = (query) => {
   return groups;
 };
 
-const mapSortsTogether = (sorts) => sorts
+const mapSortsTogether = (sorts) => sorts && sorts.length > 0 && sorts
   .sort((a, b) => (a.priority < b.priority ? 1 : -1))
   .map((sort) => ({
     [sort.feature]: [sort.type],

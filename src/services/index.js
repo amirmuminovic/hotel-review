@@ -1,6 +1,9 @@
 import UserService from './UserService';
+import AuditService from './AuditService';
+import ErrorService from './ErrorService';
 
 export {
-  // eslint-disable-next-line import/prefer-default-export
+  AuditService,
   UserService,
+  ErrorService,
 };
