@@ -69,11 +69,12 @@ const loginController = async (req, res, next) => {
       const userService = new UserService(user);
       const validPassword = await userService.comparePasswords(password);
       if (validPassword) {
-        const { _id: id, type } = user;
+        const { _id: id, type, name } = user;
         const token = sign(
           {
             id,
             type,
+            name,
           },
           config.jwtSecret,
           { expiresIn: '1h' },

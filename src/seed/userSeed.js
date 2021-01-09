@@ -9,14 +9,14 @@ const sampleUsers = [
     name: 'amir1',
     email: 'amir.muminovic192@gmail.com',
     type: userTypes.admin,
-    password: 'test123',
+    password: 'm?Gx5X3aT7vC-hS7',
     valid: true,
   },
   {
     name: 'amir2',
     email: 'amir.muminovic192+1@gmail.com',
     type: userTypes.regular,
-    password: 'test321',
+    password: '$U?b3Y}N7T$)vJn',
     valid: true,
   },
 ];
