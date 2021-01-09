@@ -16,6 +16,7 @@ const getHotelController = async (req, res, next) => {
       logger.info(`Couldn't find the hotel with id: ${hotelID}`);
       res.sendStatus(404);
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -34,6 +35,7 @@ const deleteHotelController = async (req, res, next) => {
       logger.info(`Couldn't find the hotel with id: ${hotelID}`);
       res.sendStatus(404);
     }
+    next();
   } catch (error) {
     next(error);
   }
@@ -46,6 +48,7 @@ const getHotelsController = async (req, res, next) => {
     const validatedQuery = await SearchItemSchema.validateAsync(searchQuery);
     const hotels = await HotelService.getHotels(validatedQuery);
     res.send(hotels);
+    next();
   } catch (error) {
     next(error);
   }
@@ -58,6 +61,7 @@ const createHotelController = async (req, res, next) => {
 
     await HotelService.createHotel(validatedHotel);
     res.sendStatus(201);
+    next();
   } catch (error) {
     next(error);
   }
@@ -78,6 +82,7 @@ const updateHotelController = async (req, res, next) => {
       logger.info(`Hotel not found with ID ${hotelID}`);
       res.sendStatus(404);
     }
+    next();
   } catch (error) {
     next(error);
   }
