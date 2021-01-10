@@ -27,7 +27,7 @@ class UserService {
       subject: 'Welcome to HotelReview!',
       html: `
         <p>Dear ${this.user.name}, welcome to HotelReview!</p>
-        <p>Click the following <a href="http://localhost:3000/register/${this.user.confirmationCode}">link</a> to confirm your registration.</p>
+        <p>Click the following <a href="https://localhost:3000/register/${this.user.confirmationCode}">link</a> to confirm your registration.</p>
       `,
     });
   }
